@@ -13,6 +13,7 @@ import com.itheima.pinda.authority.biz.service.auth.ValidateCodeService;
 import com.itheima.pinda.authority.biz.service.auth.impl.AuthManager;
 import com.itheima.pinda.base.BaseController;
 import com.itheima.pinda.base.R;
+import com.itheima.pinda.log.annotation.SysLog;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
@@ -36,6 +37,7 @@ public class LoginController extends BaseController {
     @Autowired
     private AuthManager authManager;
 
+    @SysLog("登录日志记录标识")
     @PostMapping("/login")
     @ApiOperation(notes = "这是可省略的notes", value = "登录")
     public R<LoginDTO> login(@Validated @RequestBody LoginParamDTO loginParamDTO) {
@@ -50,6 +52,7 @@ public class LoginController extends BaseController {
         return null;
     }
 
+    @SysLog("生成验证码记录标识")
     @ApiOperation(value = "验证码", notes = "验证码")
     @GetMapping(value = "/captcha", produces = "image/png")
     public void captcha(@RequestParam(value = "key",required = true) String key, HttpServletResponse response) throws IOException {
