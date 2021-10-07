@@ -48,7 +48,7 @@ public class LoginController extends BaseController {
             R<LoginDTO> login = authManager.login(loginParamDTO.getAccount(), loginParamDTO.getPassword());
             return login;
         }
-
+        //检验失败
         return null;
     }
 

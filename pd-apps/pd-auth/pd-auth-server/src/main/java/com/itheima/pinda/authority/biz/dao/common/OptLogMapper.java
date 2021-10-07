@@ -1,14 +1,19 @@
-package com.itheima.pinda.authority.biz.dao.auth.common;
+package com.itheima.pinda.authority.biz.dao.common;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.itheima.pinda.authority.entity.common.OptLog;
+
 import com.itheima.pinda.authority.entity.common.OptLog;
 import org.springframework.stereotype.Repository;
 
 /**
- * @author huajieli
- * @create 2021-10-07 17:58
+ * <p>
+ * Mapper 接口
+ * 系统日志
+ * </p>
+ *
  */
-
 @Repository
 public interface OptLogMapper extends BaseMapper<OptLog> {
+
 }

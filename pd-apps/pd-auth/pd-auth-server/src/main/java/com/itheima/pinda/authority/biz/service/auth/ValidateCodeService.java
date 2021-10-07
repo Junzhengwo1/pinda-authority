@@ -1,22 +1,17 @@
 package com.itheima.pinda.authority.biz.service.auth;
-
-import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-
+import javax.servlet.http.HttpServletResponse;
 /**
- * @author huajieli
- * @create 2021-10-05 22:20
+ * 验证码
  */
-
 public interface ValidateCodeService {
     /**
-     * 生成算术类型验证码
-     * @param key
-     * @param response
+     * 生成验证码
+     * @param key      验证码 uuid
+     * @param response HttpServletResponse
      * @throws IOException
      */
     void create(String key, HttpServletResponse response) throws IOException;
-
     /**
      * 校验验证码
      * @param key   前端上送 key
